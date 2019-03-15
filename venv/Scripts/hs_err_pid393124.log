@@ -1,0 +1,211 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_IN_PAGE_ERROR (0xc0000006) at pc=0x64e7c04f, pid=393124, tid=0x00060464
+#
+# JRE version:  (8.0_131-b11) (build )
+# Java VM: Java HotSpot(TM) Client VM (25.131-b11 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0x4c04f]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x022fc800):  JavaThread "main" [_thread_in_vm, id=394340, stack(0x02120000,0x02170000)]
+
+siginfo: ExceptionCode=0xc0000006
+
+Error accessing class data sharing archive. Mapped file inaccessible during execution,  possible disk/network problem.
+
+Registers:
+EAX=0x16203570, EBX=0x022fcc10, ECX=0x000003a5, EDX=0x000003a5
+ESP=0x0216e8bc, EBP=0x0216e8c8, ESI=0x6c5e0272, EDI=0x00000006
+EIP=0x64e7c04f, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x0216e8bc)
+0x0216e8bc:   6c5e0272 022fcc10 02170f88 0216e8ec
+0x0216e8cc:   64e7c11c 000003a5 022fcc10 00000006
+0x0216e8dc:   6c5e0272 0216ef00 00000004 00000006
+0x0216e8ec:   0216e9d0 64e638a7 022fcc10 00000006
+0x0216e8fc:   0216e920 0216ef00 022fc800 14401938
+0x0216e90c:   77c15d3e 00000000 00000000 00000060
+0x0216e91c:   022fcdb0 6c5e0272 00000000 65210269
+0x0216e92c:   022f0000 00000060 0216e95c 64f92ae1 
+
+Instructions: (pc=0x64e7c04f)
+0x64e7c02f:   5b 8b e5 5d c3 cc cc cc cc cc cc cc cc cc cc cc
+0x64e7c03f:   cc 55 8b ec 51 8b 41 04 53 89 4d fc 8b 4d 08 56
+0x64e7c04f:   8b 34 88 8d 04 88 33 db 57 85 f6 74 46 8d 64 24
+0x64e7c05f:   00 8b 55 14 43 39 16 75 16 8b 45 10 8b 4d 0c 8b 
+
+
+Register to memory mapping:
+
+EAX=0x16203570 is pointing into metadata
+EBX=0x022fcc10 is an unknown value
+ECX=0x000003a5 is an unknown value
+EDX=0x000003a5 is an unknown value
+ESP=0x0216e8bc is pointing into the stack for thread: 0x022fc800
+EBP=0x0216e8c8 is pointing into the stack for thread: 0x022fc800
+ESI=0x6c5e0272 is an unknown value
+EDI=0x00000006 is an unknown value
+
+
+Stack: [0x02120000,0x02170000],  sp=0x0216e8bc,  free space=314k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x4c04f]
+V  [jvm.dll+0x4c11c]
+V  [jvm.dll+0x338a7]
+V  [jvm.dll+0x33bd3]
+V  [jvm.dll+0x39a05]
+V  [jvm.dll+0x3b846]
+V  [jvm.dll+0x506af]
+V  [jvm.dll+0x50d7a]
+V  [jvm.dll+0x51fc0]
+V  [jvm.dll+0x5200a]
+V  [jvm.dll+0xad0d8]
+V  [jvm.dll+0x80f22]
+V  [jvm.dll+0x81107]
+j  java.lang.ref.Reference.<clinit>()V+64
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x15af45]
+V  [jvm.dll+0x2213ae]
+V  [jvm.dll+0x15afde]
+V  [jvm.dll+0xc05eb]
+V  [jvm.dll+0xc17a7]
+V  [jvm.dll+0xc18f8]
+V  [jvm.dll+0xc16cf]
+V  [jvm.dll+0xc18f8]
+V  [jvm.dll+0xc16cf]
+V  [jvm.dll+0xc18f8]
+V  [jvm.dll+0x178bac]
+V  [jvm.dll+0xe70e1]
+C  [java.exe+0x14c6]
+C  [java.exe+0x203a]
+C  [java.exe+0xae9f]
+C  [java.exe+0xaf29]
+C  [KERNEL32.DLL+0x18484]
+C  [ntdll.dll+0x641c8]
+C  [ntdll.dll+0x64198]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.ref.Reference.<clinit>()V+64
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02197800 JavaThread "Reference Handler" daemon [_thread_blocked, id=395140, stack(0x14930000,0x14980000)]
+=>0x022fc800 JavaThread "main" [_thread_in_vm, id=394340, stack(0x02120000,0x02170000)]
+
+Other Threads:
+  0x02193c00 VMThread [stack: 0x148a0000,0x148f0000] [id=393736]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 88K [0x04400000, 0x04950000, 0x09950000)
+  eden space 4416K,   2% used [0x04400000, 0x04416158, 0x04850000)
+  from space 512K,   0% used [0x04850000, 0x04850000, 0x048d0000)
+  to   space 512K,   0% used [0x048d0000, 0x048d0000, 0x04950000)
+ tenured generation   total 10944K, used 0K [0x09950000, 0x0a400000, 0x14400000)
+   the space 10944K,   0% used [0x09950000, 0x09950000, 0x09950200, 0x0a400000)
+ Metaspace       used 6K, capacity 2240K, committed 2240K, reserved 4480K
+
+Card table byte_map: [0x04300000,0x04390000] byte_map_base: 0x042de000
+
+Polling page: 0x00840000
+
+CodeCache: size=32768Kb used=334Kb max_used=334Kb free=32433Kb
+ bounds [0x02300000, 0x02358000, 0x04300000]
+ total_blobs=68 nmethods=0 adapters=45
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (3 events):
+Event: 0.133 Thread 0x022fc800 Thread added: 0x022fc800
+Event: 0.159 Thread 0x02197800 Thread added: 0x02197800
+Event: 0.159 loading class java/lang/ref/Reference$1
+
+
+Dynamic libraries:
+0x00940000 - 0x00973000 	C:\Program Files (x86)\Java\jdk1.8.0_131\jre\bin\java.exe
+0x77bd0000 - 0x77d60000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x74b80000 - 0x74c60000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x75240000 - 0x75424000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x67010000 - 0x670ad000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x77a60000 - 0x77ad8000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x74ac0000 - 0x74b7f000 	C:\WINDOWS\System32\msvcrt.dll
+0x74a60000 - 0x74aa4000 	C:\WINDOWS\System32\sechost.dll
+0x76190000 - 0x76250000 	C:\WINDOWS\System32\RPCRT4.dll
+0x74490000 - 0x744b0000 	C:\WINDOWS\System32\SspiCli.dll
+0x74480000 - 0x7448a000 	C:\WINDOWS\System32\CRYPTBASE.dll
+0x74d30000 - 0x74d88000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x74680000 - 0x7480d000 	C:\WINDOWS\System32\USER32.dll
+0x74d90000 - 0x74da7000 	C:\WINDOWS\System32\win32u.dll
+0x74dc0000 - 0x74de2000 	C:\WINDOWS\System32\GDI32.dll
+0x764b0000 - 0x76614000 	C:\WINDOWS\System32\gdi32full.dll
+0x76430000 - 0x764ad000 	C:\WINDOWS\System32\msvcp_win.dll
+0x744b0000 - 0x745ce000 	C:\WINDOWS\System32\ucrtbase.dll
+0x737b0000 - 0x739b4000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.590_none_42ead2d644e6098e\COMCTL32.dll
+0x75b00000 - 0x75d5c000 	C:\WINDOWS\System32\combase.dll
+0x75430000 - 0x75456000 	C:\WINDOWS\System32\IMM32.DLL
+0x65200000 - 0x652bf000 	C:\Program Files (x86)\Java\jdk1.8.0_131\jre\bin\msvcr100.dll
+0x64e30000 - 0x651fe000 	C:\Program Files (x86)\Java\jdk1.8.0_131\jre\bin\client\jvm.dll
+0x74ab0000 - 0x74ab6000 	C:\WINDOWS\System32\PSAPI.DLL
+0x732d0000 - 0x732d8000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x74810000 - 0x74877000 	C:\WINDOWS\System32\WS2_32.dll
+0x74080000 - 0x74088000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x740d0000 - 0x740f4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x73dc0000 - 0x73de3000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x75080000 - 0x750b9000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x69a30000 - 0x69a3c000 	C:\Program Files (x86)\Java\jdk1.8.0_131\jre\bin\verify.dll
+0x699e0000 - 0x69a01000 	C:\Program Files (x86)\Java\jdk1.8.0_131\jre\bin\java.dll
+0x699c0000 - 0x699d3000 	C:\Program Files (x86)\Java\jdk1.8.0_131\jre\bin\zip.dll
+0x703e0000 - 0x70562000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+java_command: com.intellij.util.ReadEnv C:\Users\User\AppData\Local\Temp\intellij-cmd-env.tmp
+java_class_path (initial): C:\Program Files\JetBrains\PyCharm Edu 2018.3\lib\util.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Users\User\Google Drive\Project\Python\projects\webscrap\venv\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Anaconda3;C:\Anaconda3\Scripts;C:\Program Files\JetBrains\PyCharm Edu 2018.3\bin;;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;
+USERNAME=User
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17134 (10.0.17134.556)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 142 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8283344k(2963888k free), swap 9594064k(1753528k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.131-b11) for windows-x86 JRE (1.8.0_131-b11), built on Mar 15 2017 01:26:29 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Mar 14 19:34:19 2019
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
